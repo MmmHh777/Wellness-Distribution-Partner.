@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태안 웰니스 농수산물 유통 기획자 - 지속 가능한 수익 파트너</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(28, 63, 94, 0.08);
+            z-index: 1000;
+            padding: 1.2rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: #1C3F5E;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background: #f0f7ff;
+            color: #1C3F5E;
+        }
+
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #1C3F5E 0%, #2d5a7b 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            color: #1C3F5E;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            color: #5A8C5A;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .problem {
+            background: #f8fafb;
+        }
+
+        .problem-list {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid #1C3F5E;
+        }
+
+        .problem-item h4 {
+            font-size: 1.3rem;
+            color: #1C3F5E;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .problem-item p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #5A8C5A 0%, #4a7a4a 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .solution {
+            background: white;
+        }
+
+        .value-props {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-prop {
+            background: #f8fafb;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid #e8f2f7;
+        }
+
+        .value-prop h4 {
+            color: #5A8C5A;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-prop p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .benefits {
+            background: #f8fafb;
+        }
+
+        .benefit-cards {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 30px rgba(28, 63, 94, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(28, 63, 94, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.4rem;
+            color: #1C3F5E;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .trust {
+            background: white;
+        }
+
+        .trust-table {
+            width: 100%;
+            margin-top: 3rem;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .trust-table th {
+            background: #1C3F5E;
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .trust-table td {
+            padding: 1.8rem 1.5rem;
+            border-bottom: 1px solid #e8f2f7;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .trust-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .trust-table tr:nth-child(even) {
+            background: #f8fafb;
+        }
+
+        .pricing {
+            background: #f8fafb;
+        }
+
+        .pricing-table {
+            width: 100%;
+            margin-top: 3rem;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 30px rgba(28, 63, 94, 0.1);
+        }
+
+        .pricing-table th {
+            background: linear-gradient(135deg, #1C3F5E 0%, #2d5a7b 100%);
+            color: white;
+            padding: 1.8rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.15rem;
+        }
+
+        .pricing-table td {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid #e8f2f7;
+            text-align: center;
+            font-size: 1.05rem;
+            background: white;
+        }
+
+        .pricing-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #1C3F5E;
+            background: #f8fafb;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #5A8C5A 0%, #4a7a4a 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .highlight strong {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #1C3F5E 0%, #2d5a7b 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta-urgency {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            color: #FFD700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #5A8C5A;
+            color: white;
+            padding: 1.5rem 4rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(90, 140, 90, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #4a7a4a;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(90, 140, 90, 0.4);
+        }
+
+        .contact {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .pricing-table, .trust-table {
+                font-size: 0.9rem;
+            }
+
+            .pricing-table th, .pricing-table td,
+            .trust-table th, .trust-table td {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#problem">문제</a></li>
+            <li><a href="#solution">솔루션</a></li>
+            <li><a href="#benefits">혜택</a></li>
+            <li><a href="#trust">신뢰</a></li>
+            <li><a href="#pricing">가격</a></li>
+            <li><a href="#cta">신청</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>태안의 고립감을 지속 가능한 수익으로 바꾸는<br>프리미엄 웰니스 유통 파트너</h1>
+        <p class="subtitle">태안 2030 창업가를 위한 비수기 고민 해결책<br>건강한 지역 자원으로 안정적인 미래를 만드세요</p>
+    </section>
+
+    <section id="problem" class="problem">
+        <h2>당신의 창업 열정, '계절의 벽'에 막혀 좌절하고 있진 않습니까?</h2>
+        <h3>태안에 정착한 젊은 창업가님, 당신의 이야기에 깊이 공감합니다.</h3>
+        
+        <div class="problem-list">
+            <div class="problem-item">
+                <h4>⚠️ 지속 불가능한 수익 모델</h4>
+                <p>풍부한 해양·관광 자원만으로는 계절적 편중 문제를 해결할 수 없습니다. 성수기가 지나면 수익이 급감하는 현실.</p>
+            </div>
+            
+            <div class="problem-item">
+                <h4>⚠️ 고립된 비즈니스</h4>
+                <p>함께 고민하고 협업할 파트너 부족으로 아이디어가 현실이 되기 어렵습니다. 정착 초기 고립감은 사업의 큰 걸림돌입니다.</p>
+            </div>
+            
+            <div class="problem-item">
+                <h4>⚠️ 고정된 판로의 한계</h4>
+                <p>혁신적인 제품을 만들어도, 기존의 복잡하고 경쟁적인 유통 채널을 뚫기 어렵습니다.</p>
+            </div>
+        </div>
+
+        <div class="quote">
+            우리는 알고 있습니다. 당신에게 필요한 것은 '반짝이는 아이디어'가 아니라,<br>'비수기에도 굳건한 안정적인 수익 기반'입니다.
+        </div>
+    </section>
+
+    <section id="solution" class="solution">
+        <h2>웰니스 농수산물 유통 기획자가 제시하는 '지속 가능성'의 로드맵</h2>
+        <h3>태안의 친환경 농수산물과 폭발적으로 성장하는 웰니스 트렌드를 결합하여, 지역 청년 창업자 및 생산자에게 독점적인 프리미엄 비수기 판로를 제공합니다.</h3>
+        
+        <div class="value-props">
+            <div class="value-prop">
+                <h4>✅ 핵심 가치 제안</h4>
+                <p>태안 농어민의 고품질 원물을 '건강'을 테마로 프리미엄 유통 상품으로 기획하고, 안정적인 구독 경제 모델을 구축하여, 청년 창업가가 계절에 상관없이 지속 가능한 수익을 확보하도록 돕습니다.</p>
+            </div>
+            
+            <div class="value-prop">
+                <h4>✨ 본질</h4>
+                <p>우리는 단순한 중개자가 아닌, 당신의 제품에 '웰니스 프리미엄' 가치를 입혀 시장 경쟁력을 극대화하는 브랜드 빌더입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2>베타 테스터로 참여하여 당신이 얻을 3가지 혁신적인 혜택</h2>
+        
+        <div class="benefit-cards">
+            <div class="benefit-card">
+                <span class="benefit-icon">💰</span>
+                <h4>계절을 타지 않는 안정적 수익 창출</h4>
+                <p>귀하의 사업 비수기에도 웰니스 꾸러미 구독 서비스를 통해 안정적인 현금 흐름을 확보하고, 재고 부담을 최소화합니다.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">🤝</span>
+                <h4>신뢰 기반의 유기적 협력 파트너십</h4>
+                <p>태안군 로컬푸드협동조합, 농업기술센터 등 공식 기관과의 네트워크에 즉시 편입되어, 고립감을 해소하고 필요한 물류 및 가공 기술 컨설팅을 지원받습니다.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">📈</span>
+                <h4>프리미엄 웰니스 브랜딩 무상 지원</h4>
+                <p>귀하의 로컬 제품에 '건강 라이프스타일'이라는 강력한 마케팅 컨셉을 결합하여, 고소득 도시 소비층(3040 웰빙 관심층)을 새로운 핵심 고객으로 확보할 수 있도록 돕습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust" class="trust">
+        <h2>함께 하는 성장을 위한 검증된 기반과 파트너</h2>
+        <h3>우리의 시범 서비스(MVP)는 이미 실행 기반을 마련했습니다.</h3>
+        
+        <table class="trust-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>내용</th>
+                    <th>증거 및 계획</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MVP 형태</td>
+                    <td>태안 인근 소규모 농가/어가 3~5곳과 협력한 '웰니스 지역 농수산물 꾸러미' 시범 구독 서비스</td>
+                    <td>SNS를 통한 온라인 판매 및 소비자 피드백 수집 완료 후, 청년 창업가 파트너를 모집하여 규모 확장 예정</td>
+                </tr>
+                <tr>
+                    <td>핵심 파트너</td>
+                    <td>태안군 로컬푸드협동조합 (생산자 연결, 물류), 태안군 농업기술센터 및 도시재생지원센터 (가공 기술, 창업 공간 지원)</td>
+                    <td>지역 사회의 공신력 있는 기관들과의 협력을 통해 사업의 안정성과 지속 가능성을 확보했습니다</td>
+                </tr>
+                <tr>
+                    <td>장기 비전</td>
+                    <td>태안 로컬 웰니스 브랜드를 만들어 지역 가치 확산의 중심축으로 정착</td>
+                    <td>당신과의 협력을 통해 태안의 '건강한 해양·농촌 라이프스타일'을 상징하는 대표 브랜드로 함께 성장할 것입니다</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>1기 혁신 파트너(베타 테스터)를 위한 특별 조건</h2>
+        <h3>우리는 장기적인 신뢰 관계 구축을 최우선으로 합니다. 1기 파트너에게는 초기 시장 검증에 기여하는 보상으로 파격적인 조건을 제시합니다.</h3>
+        
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>1기 혁신 파트너 (선착순 5팀)</th>
+                    <th>일반 파트너 (예상)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>초기 진입 비용</td>
+                    <td><strong style="color: #5A8C5A; font-size: 1.3rem;">0원</strong> (MVP 기간 동안)</td>
+                    <td>협력 기획 비용 발생</td>
+                </tr>
+                <tr>
+                    <td>웰니스 기획 컨설팅</td>
+                    <td><strong style="color: #5A8C5A;">무상 지원</strong> (3회)</td>
+                    <td>유료 전환</td>
+                </tr>
+                <tr>
+                    <td>수익 분배 조건</td>
+                    <td><strong style="color: #5A8C5A;">업계 최고 수준의 우대 수익 분배율 적용</strong></td>
+                    <td>표준 수익 분배율 적용</td>
+                </tr>
+                <tr>
+                    <td>협력 기간</td>
+                    <td>3개월 시범 운영 후, 상호 협의하에 장기 계약 체결</td>
+                    <td>1년 단위 계약</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight">
+            <strong>⭐ 특별 혜택:</strong> 지금 신청하시면, 인근 도시 웰빙 소비자를 대상으로 한 귀하의 로컬 상품 <strong>'1회분 프리미엄 디지털 홍보 콘텐츠 제작'</strong>을 무상으로 지원합니다. (선착순 마감)
+        </div>
+    </section>
+
+    <section id="cta" class="cta">
+        <h2>더 이상 고립되지 마십시오.<br>당신의 성장에 태안의 바다가 함께합니다.</h2>
+        <p>비수기의 불안감은 이제 내려놓으십시오.</p>
+        <p><strong>웰니스 농수산물 유통 기획자</strong>와 함께 태안에서의 당신의 창업이<br>지속 가능하고, 건강하며, 안정적인 미래를 만들 수 있도록 지금 바로 시작하십시오.</p>
+        
+        <p class="cta-urgency">선착순 5팀 마감 임박! 혁신의 첫 걸음을 내딛으세요.</p>
+        
+        <a href="#apply" class="cta-button">1기 파트너 신청하기 (선착순 5팀)</a>
+        
+        <div class="contact">
+            <p>📞 추가 문의: 협력 조건 및 상세 계약 관련 궁금증은 언제든지 문의해 주세요.</p>
+        </div>
+    </section>
+
+</body>
+</html>
